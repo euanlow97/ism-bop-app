@@ -1,5 +1,7 @@
 # ISM BOP Application
 
+This project contains the ISM BOP Application service and frontend.
+
 <!-- # Getting Started
 
 Welcome to your new project.
