@@ -1,0 +1,23 @@
+# SAP Project Piper (https://www.project-piper.io/) pipeline configuration file
+# Azure pipeline only supports the steps mtaBuild, cloudFoundryDeploy & tmsUpload / tmsExport
+
+stages:
+
+   Build:     
+     ## mtaBuild
+     verbose: false
+
+   Release:     
+     ## cloudFoundryDeploy
+     deployTool: 'mtaDeployPlugin'
+     deployType: 'standard'
+     mtaDeployParameters: '-f --version-rule ALL' 
+     cfOrg: 'cf-order-management-dev-j4s5jpqjls'
+     cfSpace: 'BOP'
+     apiEndpoint: 'https://api.cf.eu10-004.hana.ondemand.com'
+
+     ## tmsUpload
+     nodeName: 'tbd'     
+     #nodeExtDescriptorMapping:                     
+     #  webplatform_QA_MTA: 'qa.mtaext'
+     #  webplatform_PROD_MTA: 'prod.mtaext'
