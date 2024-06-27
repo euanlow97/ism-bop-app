@@ -1,0 +1,8 @@
+{
+    "ISMBOP_DB_MASTER_VARIANT": {
+        "target": {
+            "object": "com.basf.otc.ism.bop.db.base.views::CV_Master_Variants",
+            "schema": "ism-bop-db"
+          }
+    }
+}     

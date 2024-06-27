@@ -1,0 +1,14 @@
+{
+    "ism-bop-db": {
+        "object_owner": {
+            "container_roles": [
+                "com.basf.otc.ism.bop.db.base.roles::R_BOP_EXT_ACCESS_G#"
+            ]
+        },
+        "application_user": {
+            "container_roles": [
+                "com.basf.otc.ism.bop.db.base.roles::R_BOP_EXT_ACCESS"
+            ]
+        }
+    }
+}

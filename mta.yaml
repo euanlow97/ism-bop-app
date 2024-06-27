@@ -30,10 +30,13 @@ modules:
 - name: ism-bop-app-db-deployer
   type: hdb
   path: gen/db
+  properties:
+    TARGET_CONTAINER: ism-bop-app
   parameters:
     buildpack: nodejs_buildpack
   requires:
   - name: ism-bop-app
+  - name: ism-bop-db
 
 resources:
 - name: ism-bop-app
@@ -43,3 +46,7 @@ resources:
     service-plan: hdi-shared
   properties:
     hdi-container-name: ${service-name}
+- name: ism-bop-db 
+  type: org.cloudfoundry.existing-service
+  parameters:
+    service: hana
