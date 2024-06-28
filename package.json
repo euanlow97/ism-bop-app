@@ -20,7 +20,7 @@
     "eslint": "^9"
   },
   "scripts": {
-    "start": "cds-serve",
+    "start": "cds watch --profile hybrid",
     "install:all": "npm-recursive-install",
     "watch-simulation-frontend": "cds watch --open simulation-frontend/webapp/index.html?sap-ui-xx-viewCache=false"
   },

@@ -17,7 +17,7 @@
     },
     "dataSources": {
       "mainService": {
-        "uri": "/odata/v4/variants/",
+        "uri": "/VariantsSrv/",
         "type": "OData",
         "settings": {
           "annotations": [],

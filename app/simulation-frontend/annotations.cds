@@ -1,1 +1,1 @@
-using Variants as service from '../../srv/variants-srv';
+using VariantsSrv as service from '../../srv/variants-srv';

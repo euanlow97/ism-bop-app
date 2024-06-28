@@ -7,8 +7,8 @@
         xmlns="sap.m">
     <f:DynamicPage
             id="dynamicPageId"
-            headerExpanded="{/headerExpanded}"
-            toggleHeaderOnTitleClick="{/titleClickable}"
+            headerExpanded="true"
+            toggleHeaderOnTitleClick="true"
             showFooter="true">
         <!-- DynamicPage Title -->
         <f:title>
@@ -76,17 +76,17 @@
                     </Toolbar> -->
                 </headerToolbar>
                 <columns>
-                    <Column width="20em">
+                    <Column
+                            width="20em"
+                            mergeDuplicates="true">
                         <Text text="Variant Name" />
                     </Column>
                     <Column
                             minScreenWidth="Tablet"
                             demandPopin="true"
-                            hAlign="Center">
-                        <Text text="Filter Variants" />
-                    </Column>
-                    <Column hAlign="Center">
-                        <Text text="Weighing and Ranking" />
+                            hAlign="Center"
+                            mergeDuplicates="true">
+                        <Text text="Variant Contents" />
                     </Column>
                 </columns>
                 <items>
@@ -95,8 +95,7 @@
                             <ObjectIdentifier
                                     title="{VARIANT_NAME}"
                                     text="{VARIANT_DESC}" />
-                            <Text text="Test" />
-                            <Text text="Test" />
+                            <Text text="{VARIANT_FIELD} : {VARIANT_VALUE}" />
                         </cells>
                     </ColumnListItem>
                 </items>
