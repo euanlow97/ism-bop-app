@@ -6,19 +6,23 @@
   "license": "UNLICENSED",
   "private": true,
   "dependencies": {
+    "@cap-js/cds-typer": "^0.22.0",
     "@sap/cds": "^7.9.2",
+    "@sap/cds-hana": "^2",
     "express": "^4",
-    "@sap/cds-hana": "^2"
+    "recursive-install": "^1.4.0"
   },
   "devDependencies": {
     "@cap-js/sqlite": "^1",
     "@sap/cds-dk": "^7",
     "@sap/eslint-plugin-cds": "^3",
+    "@sap/ux-specification": "^1.120.13",
     "eslint": "^9"
   },
   "scripts": {
     "start": "cds-serve",
-    "install:all": "npm-recursive-install"
+    "install:all": "npm-recursive-install",
+    "watch-simulation-frontend": "cds watch --open simulation-frontend/webapp/index.html?sap-ui-xx-viewCache=false"
   },
   "cds": {
     "hana": {
@@ -27,5 +31,8 @@
     "requires": {
       "db": "hana"
     }
-  }
+  },
+  "sapux": [
+    "app/simulation-frontend"
+  ]
 }

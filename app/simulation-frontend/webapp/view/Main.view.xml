@@ -1,0 +1,120 @@
+<mvc:View
+        controllerName="com.basf.otc.ism.bop.simulationfrontend.controller.Main"
+        xmlns:mvc="sap.ui.core.mvc"
+        xmlns:layout="sap.ui.layout"
+        xmlns:f="sap.f"
+        displayBlock="true"
+        xmlns="sap.m">
+    <f:DynamicPage
+            id="dynamicPageId"
+            headerExpanded="{/headerExpanded}"
+            toggleHeaderOnTitleClick="{/titleClickable}"
+            showFooter="true">
+        <!-- DynamicPage Title -->
+        <f:title>
+            <f:DynamicPageTitle>
+                <f:heading>
+                    <Title text="Backorder Processing Simulation" />
+                </f:heading>
+                <f:expandedContent>
+                    <Label text="By ISM BOP" />
+                </f:expandedContent>
+                <f:snappedContent>
+                    <Label text="By ISM BOP" />
+                </f:snappedContent>
+                <f:snappedTitleOnMobile>
+                    <Title text="By ISM BOP" />
+                </f:snappedTitleOnMobile>
+                <f:content>
+                </f:content>
+                <f:actions>
+                    <Button
+                            text="Toggle Footer"
+                            type="Transparent" />
+                    <Button
+                            icon="sap-icon://settings"
+                            type="Emphasized" />
+                </f:actions>
+            </f:DynamicPageTitle>
+        </f:title>
+        <!-- DynamicPage Header -->
+        <f:header>
+            <f:DynamicPageHeader pinnable="true">
+                <layout:HorizontalLayout allowWrapping="true">
+                    <layout:VerticalLayout class="sapUiMediumMarginEnd">
+                        <Label text="Active User" />
+                        <ObjectNumber
+                                class="sapMObjectNumberLarge"
+                                number="LOWZH" />
+                    </layout:VerticalLayout>
+                    <layout:VerticalLayout class="sapUiMediumMarginEnd">
+                        <Label text="BURUBOP Variants" />
+                        <ObjectNumber
+                                class="sapMObjectNumberLarge"
+                                number="123" />
+                    </layout:VerticalLayout>
+                </layout:HorizontalLayout>
+            </f:DynamicPageHeader>
+        </f:header>
+        <f:content>
+            <Table
+                    id="idProductsTable"
+                    sticky="HeaderToolbar,ColumnHeaders"
+                    inset="false"
+                    items="{
+							path: '/BurupbopVariants'
+						}"
+                    class="sapFDynamicPageAlignContent"
+                    width="auto">
+                <headerToolbar>
+                    <!-- <Toolbar>
+                        <ToolbarSpacer />
+                        <Button
+                                icon="sap-icon://add"
+                                type="Emphasized"
+                                text="Add Variant" />
+                    </Toolbar> -->
+                </headerToolbar>
+                <columns>
+                    <Column width="20em">
+                        <Text text="Variant Name" />
+                    </Column>
+                    <Column
+                            minScreenWidth="Tablet"
+                            demandPopin="true"
+                            hAlign="Center">
+                        <Text text="Filter Variants" />
+                    </Column>
+                    <Column hAlign="Center">
+                        <Text text="Weighing and Ranking" />
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem>
+                        <cells>
+                            <ObjectIdentifier
+                                    title="{VARIANT_NAME}"
+                                    text="{VARIANT_DESC}" />
+                            <Text text="Test" />
+                            <Text text="Test" />
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </f:content>
+        <f:footer>
+            <OverflowToolbar>
+                <ToolbarSpacer />
+                <Button
+                        type="Emphasized"
+                        text="Add New Variant"
+                        icon="sap-icon://add"
+                        press="onAddVariantPress" />
+                <Button
+                        type="Reject"
+                        text="Delete Variants"
+                        icon="sap-icon://delete" />
+            </OverflowToolbar>
+        </f:footer>
+    </f:DynamicPage>
+</mvc:View>

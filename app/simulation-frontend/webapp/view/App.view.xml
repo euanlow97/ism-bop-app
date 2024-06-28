@@ -1,0 +1,11 @@
+<mvc:View
+        controllerName="com.basf.otc.ism.bop.simulationfrontend.controller.App"
+        xmlns:mvc="sap.ui.core.mvc"
+        xmlns:f="sap.f"
+        displayBlock="true"
+        xmlns="sap.m">
+    <App>
+        <f:FlexibleColumnLayout id="idAppControl" />
+
+    </App>
+</mvc:View>

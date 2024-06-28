@@ -1,0 +1,1 @@
+using Variants as service from '../../srv/variants-srv';
